@@ -1,0 +1,19 @@
+  
+{% extends 'base.html' %}
+
+{% block content %}
+<p>add album</p>
+
+<form method="POST" class="post-form" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" name="form_type" value="formOne">Save</button>
+</form>
+<br>
+<p>add song</p>
+<form method="POST" class="post-form" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form_two.as_p }}
+    <button type="submit" name="form_type" value="formTwo">Save</button>
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <p><img src={{ artist.image.url }}></p>
+    
+    <p>{{ artist.bio }}</p>
+    {% for album in albums %}
+    <p>{{ album.title }}</p>
+    <p><img src={{ album.cover.url }}></p>
+    <p>{{ album.year }}</p>
+    {% for song in album.song_set.all %}
+    <p>{{ song.title }}</p>
+    {% endfor %}
+    
+    {% endfor %}
+
+   
+{% endblock %}
