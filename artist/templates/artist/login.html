@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+<p>login</p>
+    {% if errors %}
+    
+    <p> {{ errors }}</p>
+
+    {% endif %}
+  
+    <form method="POST" class="form-group">
+	{% csrf_token %}
+   	<p>username{{ form.username }}</p>
+    <p>password{{ form.password }}</p>
+   
+	<button type="submit" name="login">login</button>
+    </form>
+{% endblock %}

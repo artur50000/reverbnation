@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>Create an Account</p>
+    {% if form.error_messages %}
+        {% for key, value in form.error_messages.items %}
+            <p> {{ value }}</p>
+        {% endfor%}
+    {% endif %}
+
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        <p>Username{{ form.username }}</p>
+        <p>email{{ form.email }}</p>
+        <p>password{{ form.password1 }}</p>
+        <p>confirm password{{ form.password2 }}</p>
+        <button type="submit" name="register">Register</button>
+    </form>
+{% endblock %}
