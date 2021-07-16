@@ -19,7 +19,7 @@ class Artist(models.Model):
 class Album(models.Model):
     artist = models.ForeignKey(Artist,related_name="albums", on_delete=models.CASCADE)
     title = models.CharField(max_length=80)
-    cover = models.ImageField(upload_to ='images/')
+    cover = models.ImageField(upload_to ='images/', null=True)
     year = models.DateField()
 
     def __str__(self):
